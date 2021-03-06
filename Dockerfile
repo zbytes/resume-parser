@@ -6,6 +6,8 @@ RUN java -Djarmode=layertools -jar app.jar extract
 
 FROM adoptopenjdk:11.0.7_10-jre-hotspot
 WORKDIR /app
+COPY GATEFiles GATEFiles
+COPY JAPEGrammars JAPEGrammars
 COPY --from=builder app/dependencies/ ./
 COPY --from=builder app/spring-boot-loader/ ./
 COPY --from=builder app/snapshot-dependencies/ ./
