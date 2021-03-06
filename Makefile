@@ -16,7 +16,7 @@ run: ## Run
 	${MVN_CMD} clean install && java -jar target/resume-parser.jar
 
 test: ## Test
-	curl --request POST 'http://localhost:8080/upload' \
+	curl --request POST 'http://localhost:8080/api/parsers/parse-resume' \
 	--header 'Content-Type: multipart/form-data' \
 	--form 'resume=@./Resumes/michael.pdf'
 

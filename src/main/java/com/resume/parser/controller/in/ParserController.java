@@ -19,7 +19,7 @@ public class ParserController {
 	@Autowired
 	private ParserService parserService;
 
-	@PostMapping("/upload")
+	@PostMapping("/api/parsers/parse-resume")
 	public ResponseWrapper parseResume(@RequestParam MultipartFile resume) {
 		ResponseWrapper responseWrapper = null;
 		try {
