@@ -28,7 +28,7 @@ docker_build: ## Docker build
 	./mvnw clean install -Playertools
 
 docker_publish: ## Docker publish
-	docker run -d -p8080:8080 docker.io/zbytes/resume-parser-layertools:0.0.1
+	docker run -d -p8080:8080 docker.io/zbytes/resume-parser:0.0.1
 
 docker_run:  ## Docker run
-	docker run -d -p8080:8080 docker.io/zbytes/resume-parser-layertools:0.0.1
+	docker run -d -p8080:8080 docker.io/zbytes/resume-parser:0.0.1

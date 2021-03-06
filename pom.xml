@@ -89,7 +89,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <repository>docker.io/zbytes/${project.artifactId}-layertools</repository>
+                            <repository>docker.io/zbytes/${project.artifactId}</repository>
                             <dockerfile>${project.basedir}/Dockerfile</dockerfile>
                             <tag>${project.version}</tag>
                         </configuration>
