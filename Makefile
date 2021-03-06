@@ -1,5 +1,6 @@
 .PHONY: help
 .DEFAULT_GOAL := help
+export MVN_CMD := ./mvnw -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -V
 help:
 	@echo "---------------------------------------------------------------------------------------"
 	@echo ""
@@ -12,7 +13,7 @@ help:
 ##@ Development
 
 run: ## Run
-	./mvnw clean install && java -jar target/resume-parser.jar
+	${MVN_CMD} clean install && java -jar target/resume-parser.jar
 
 test: ## Test
 	curl --request POST 'http://localhost:8080/upload' \
@@ -25,7 +26,7 @@ docker_login: ## Docker login
 	echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
 
 docker_build: ## Docker build
-	./mvnw clean install -Playertools
+	${MVN_CMD} clean install -Playertools
 
 docker_publish: ## Docker publish
 	docker run -d -p8080:8080 docker.io/zbytes/resume-parser:0.0.1
