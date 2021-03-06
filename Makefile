@@ -23,7 +23,7 @@ test: ## Test
 ##@ Cloud - Docker
 
 docker_login: ## Docker login
-	echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
+	echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
 
 docker_build: ## Docker build
 	${MVN_CMD} clean install -Playertools
